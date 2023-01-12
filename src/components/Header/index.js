@@ -1,12 +1,30 @@
 import React from "react";
+import Button from "../Button";
 import * as S from "./styled";
 
 const Header = () => {
   return (
     <S.Container>
-      <S.Title>
-        Aqui vai entrar a pesquisa de bairro pra gerar o gráfico
-      </S.Title>
+      <S.Content>
+        <S.Title>Bairro</S.Title>
+        <S.Combobox
+          items={[
+            "Jd. Colinas",
+            "Jd. das Industrias",
+            "Jd. Alvorada",
+            "Pq. Res. Aquarius",
+          ]}
+          onChange={(selected) => console.log(selected)}
+          placeholder="Selecione o bairro"
+          autocompleteProps={{
+            // Used for the title in the autocomplete.
+            title: "Bairros",
+          }}
+        />
+        <Button type="submit" variant="simple">
+          Buscar
+        </Button>
+      </S.Content>
     </S.Container>
   );
 };

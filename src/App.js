@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { globalCss } from "@stitches/react";
 
-const Home = lazy(() => import("./pages/home"));
+const Home = lazy(() => import("./pages/Home"));
 
 const globalStyles = globalCss({
   "*": { margin: 0, padding: 0, boxSizing: "border-box" },

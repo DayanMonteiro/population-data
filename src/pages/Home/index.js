@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/Footer";
 import Graphic from "../../components/Graphic";
 import Header from "../../components/Header";
 import Maps from "../../components/Maps";
@@ -13,6 +14,7 @@ const Home = () => {
         <Maps />
         <Graphic />
       </S.Content>
+      <Footer />
     </S.Container>
   );
 };

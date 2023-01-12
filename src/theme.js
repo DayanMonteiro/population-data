@@ -5,7 +5,7 @@ export const { styled, css } = createStitches({
     colors: {
       error: "#D41C1C",
       white: "#FFFFFF",
-      black: "#0A0A0A",
+      black: "#283034",
       primary100: "#DDE2FF",
       primary200: "#BAC6FF",
       primary300: "#98A9FF",

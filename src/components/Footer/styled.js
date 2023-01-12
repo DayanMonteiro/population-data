@@ -1,9 +1,9 @@
 import { styled } from "../../theme";
 
 export const Container = styled("div", {
-  backgroundColor: "transparent",
-  maxWidth: "50%",
-  height: "100%",
+  backgroundColor: "$black",
+  width: "100%",
+  height: "5rem",
 });
 
 export const Title = styled("h1", {
