@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import Graphic from "../../components/Graphic";
+import Charts from "../../components/Charts";
 import Header from "../../components/Header";
 import Maps from "../../components/Maps";
 import * as S from "./styled";
@@ -9,10 +9,9 @@ const Home = () => {
   return (
     <S.Container>
       <Header />
-      <S.Title>Aplicação</S.Title>
       <S.Content>
         <Maps />
-        <Graphic />
+        <Charts />
       </S.Content>
       <Footer />
     </S.Container>

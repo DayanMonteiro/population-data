@@ -12,7 +12,6 @@ const globalStyles = globalCss({
   "html, body, #root": {
     width: "100%",
     height: "100%",
-    backgroundColor: "#283034",
   },
 });
 

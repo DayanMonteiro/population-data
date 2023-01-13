@@ -7,6 +7,7 @@ export const Container = styled("div", {
   height: "10rem",
   display: "flex",
   justifyContent: "center",
+  position: "relative",
 });
 
 export const Title = styled("h1", {
