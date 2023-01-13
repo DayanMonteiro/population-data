@@ -20,6 +20,12 @@ const Maps = () => {
         url="https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=kKWJYB4aZD0QZ8yteXNH"
         attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
       />
+
+      {/* Finalmente entendi o erro:
+      O json dos dados geometrias a localização em coordinates das coordenadas lat e long estão invertidas
+      preciso serializar esse dado fazendo um map e inverte os valores das posições do array
+     */}
+
       {statesData.features.map((state) => {
         const coordinates = state.geometry.coordinates[0].map((item) => [
           item[1],
