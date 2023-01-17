@@ -21,6 +21,7 @@ export const ContentHeader = styled("div", {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+  marginTop: "5rem",
 });
 
 export const Title = styled("h1", {
@@ -36,6 +37,5 @@ export const Text = styled("p", {
 export const ContentCharts = styled("div", {
   backgroundColor: "$gray100",
   width: "100%",
-  height: "55rem",
   marginTop: "8rem",
 });

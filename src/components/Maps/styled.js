@@ -1,11 +1,6 @@
 import { styled } from "../../theme";
+import { Popup as Notification } from "react-leaflet";
 
-export const Container = styled("div", {
-  backgroundColor: "transparent",
-  maxWidth: "50%",
-  height: "100%",
-});
-
-export const Title = styled("h1", {
-  color: "$primary500",
+export const Popup = styled(Notification, {
+  fontSize: "$md",
 });

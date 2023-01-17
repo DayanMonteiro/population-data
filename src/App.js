@@ -2,6 +2,9 @@ import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { globalCss } from "@stitches/react";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 const Home = lazy(() => import("./pages/Home"));
 
 const globalStyles = globalCss({
@@ -18,10 +21,12 @@ const globalStyles = globalCss({
 function App() {
   globalStyles();
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+    <Provider store={store}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Provider>
   );
 }
 
