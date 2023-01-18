@@ -6,29 +6,22 @@ export const Container = styled("div", {
   width: "100%",
   height: "10rem",
   display: "flex",
-  justifyContent: "center",
   justifyContent: "space-between",
   position: "relative",
 });
 
 export const Logo = styled("div", {
-  //  backgroundColor: "$gray200",
-  // height: "8rem",
-  width: "58%",
+  width: "59%",
+  display: "flex",
+  alignItems: "center",
 });
 
 export const Image = styled("img", {
-  width: "40rem",
-  marginTop: "-14rem",
-});
-
-export const Title = styled("h1", {
-  fontSize: "$md",
-  color: "$gray400",
+  width: "22rem",
+  marginLeft: "6rem",
 });
 
 export const Content = styled("div", {
-  // backgroundColor: "red",
   width: "42%",
   height: "100%",
   display: "flex",
@@ -37,14 +30,17 @@ export const Content = styled("div", {
 });
 
 export const SearchDistrict = styled("div", {
-  // backgroundColor: "pink",
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
 });
 
+export const Title = styled("h1", {
+  fontSize: "$md",
+  color: "$gray400",
+});
+
 export const Combobox = styled(Select, {
-  // backgroundColor: "red",
   marginLeft: "1rem",
 });

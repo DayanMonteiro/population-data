@@ -14,6 +14,7 @@ export const Button = styled("button", {
   fontSize: "$sm",
   transition: "background-color 300ms ease",
   width: "100%",
+  borderRadius: "0.3rem",
 
   variants: {
     variant: {

@@ -1,8 +1,8 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import Charts from "../../components/Charts";
+import Chart from "../../components/Chart";
 import Header from "../../components/Header";
-import Maps from "../../components/Maps";
+import Map from "../../components/Map";
 import * as S from "./styled";
 
 const Home = () => {
@@ -10,8 +10,8 @@ const Home = () => {
     <S.Container>
       <Header />
       <S.Content>
-        <Maps />
-        <Charts />
+        <Map />
+        <Chart />
       </S.Content>
       <Footer />
     </S.Container>

@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import Button from "../Button";
 import * as S from "./styled";
-import LogoImage from "../../assets/img/logo-app.png";
+import LogoImage from "../../assets/img/logo.png";
 import _isEmpty from "lodash/isEmpty";
 import { useDispatch, useSelector } from "react-redux";
-import { getNeighborhoodInfo, getPopulationAll } from "../../store/middleware";
+import {
+  getNeighborhoodInfo,
+  //  getPopulationAll
+} from "../../store/middleware";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -43,6 +46,20 @@ const Header = () => {
     console.log("nome do bairro selecionado + informações pro gráfico");
   }
 
+  // TESTE DO REPASSE
+  // const [neighborhoods, setNeighborhoods] = useState()
+
+  // const [currentName, setCurrentName] = useState()
+
+  // const listNeighborhoods = useSelector(() => neighborhoods?.getNeighborhoodInfo?.neighborhoodsNames)
+
+  // const filterList = (array, currentNeighborhood) =>
+  //   array.filter((i) => i.id_geometria === currentNeighborhood);
+
+  //  dispatch(setFilteredList(filterList(neighborhoodsNames, currentName)));
+
+  // const listFilteredNeighborhoods = useSelector(() => currentName?.getNeighborhoodInfo?.filterList)
+
   return (
     <>
       {!_isEmpty(neighborhoodsNames) && (
@@ -54,9 +71,11 @@ const Header = () => {
             <S.SearchDistrict>
               <S.Title>Bairro</S.Title>
 
+              {/* {console.log("filterList", filterList)} */}
               <S.Combobox
                 items={neighborhoodsNames}
                 onChange={(selected) => console.log(selected)}
+                // onChange={filterList}
                 placeholder="Selecione o bairro"
                 autocompleteProps={{
                   title: "Bairros",
