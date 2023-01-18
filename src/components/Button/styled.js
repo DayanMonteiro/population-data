@@ -15,22 +15,19 @@ export const Button = styled("button", {
   transition: "background-color 300ms ease",
   width: "100%",
   borderRadius: "0.3rem",
+  padding: "1.2rem",
 
   variants: {
     variant: {
       simple: {
         backgroundColor: "$gray900",
-        width: "13rem",
         color: "$white",
-        border: "1px solid $gray500",
-        display: "flex",
-        justifyContent: "start",
-        alignItems: "center",
-        paddingLeft: "2rem",
+        width: "13rem",
         height: "3.2rem",
+        border: "1px solid $gray500",
+        fontSize: "$xs",
         textTransform: "uppercase",
         opacity: "0.8",
-        fontSize: "$xs",
 
         "&:hover": {
           color: "$white",
@@ -38,20 +35,15 @@ export const Button = styled("button", {
         },
       },
       disable: {
-        color: "$white",
         backgroundColor: "$gray200",
+        color: "$white",
+        width: "13rem",
+        height: "3.2rem",
         border: "1px solid $white",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "8px 42px",
-        height: "4rem",
+        fontSize: "$xs",
         textTransform: "uppercase",
         cursor: "not-allowed",
         opacity: "0.8",
-        "@desktop": {
-          width: "90%",
-        },
       },
     },
     size: {

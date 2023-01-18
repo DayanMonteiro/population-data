@@ -1,23 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import * as S from "./styled";
 import LogoImage from "../../assets/img/logo.png";
-import _isEmpty from "lodash/isEmpty";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getNeighborhoodInfo,
-  //  getPopulationAll
-} from "../../store/middleware";
+import { getNeighborhoodInfo } from "../../store/middleware";
+import { get } from "lodash";
+import { setResultSearchProperties } from "../../store/slices/neighborhoods.slice";
 
-const Header = () => {
+const Header = ({ response, set }) => {
+  const [inputValue, setInputValue] = useState();
   const dispatch = useDispatch();
 
   const handleNeighborhoodsInfo = async () => {
     dispatch(getNeighborhoodInfo());
-  };
-
-  const handlePopulationAll = async () => {
-    //  dispatch(getPopulationAll());
   };
 
   const neighborhoodsNames = useSelector((state) =>
@@ -27,42 +22,35 @@ const Header = () => {
       }
     )
   );
-  // console.log("nome dos bairros", neighborhoodsNames);
 
-  const populationAll = useSelector(
-    (state) => state?.populationReducer?.population?.data
-  );
-  //  console.log("Id dos bairros", populationAll);
+  const neighborhoodsData = useSelector((state) => state?.neighborhoodReducer);
+
+  const getAll = get(neighborhoodsData, [
+    "neighborhood",
+    "data",
+    0,
+    "features",
+  ]);
+
+  const getProperties = getAll?.map((item) => ({
+    name: item?.properties?.name,
+    id: item?.properties?.id,
+  }));
 
   useEffect(() => {
     handleNeighborhoodsInfo();
-    // console.log("handleNeighborhoodsInfo", handleNeighborhoodsInfo());
+  }, [handleNeighborhoodsInfo]);
 
-    handlePopulationAll();
-    //console.log("dados de todas as populações", handlePopulationAll);
-  }, []);
-
-  function handleClick() {
-    console.log("nome do bairro selecionado + informações pro gráfico");
-  }
-
-  // TESTE DO REPASSE
-  // const [neighborhoods, setNeighborhoods] = useState()
-
-  // const [currentName, setCurrentName] = useState()
-
-  // const listNeighborhoods = useSelector(() => neighborhoods?.getNeighborhoodInfo?.neighborhoodsNames)
-
-  // const filterList = (array, currentNeighborhood) =>
-  //   array.filter((i) => i.id_geometria === currentNeighborhood);
-
-  //  dispatch(setFilteredList(filterList(neighborhoodsNames, currentName)));
-
-  // const listFilteredNeighborhoods = useSelector(() => currentName?.getNeighborhoodInfo?.filterList)
+  const handleSelect = async () => {
+    const getPropertiesData = getProperties.find(
+      (item) => item.name === inputValue
+    );
+    return dispatch(setResultSearchProperties(getPropertiesData));
+  };
 
   return (
     <>
-      {!_isEmpty(neighborhoodsNames) && (
+      {!!neighborhoodsNames && (
         <S.Container>
           <S.Logo>
             <S.Image src={LogoImage} />
@@ -71,27 +59,31 @@ const Header = () => {
             <S.SearchDistrict>
               <S.Title>Bairro</S.Title>
 
-              {/* {console.log("filterList", filterList)} */}
               <S.Combobox
                 items={neighborhoodsNames}
-                onChange={(selected) => console.log(selected)}
-                // onChange={filterList}
+                value={inputValue}
+                onChange={(selected) => setInputValue(selected)}
                 placeholder="Selecione o bairro"
                 autocompleteProps={{
                   title: "Bairros",
                 }}
               />
 
-              <Button
-                type="submit"
-                variant="simple"
-                onClick={() => {
-                  handleClick();
-                  console.log("onclick", handleClick());
-                }}
-              >
-                Buscar
-              </Button>
+              <>
+                {inputValue === undefined ? (
+                  <Button variant="disable">Buscar</Button>
+                ) : (
+                  <Button
+                    type="submit"
+                    variant="simple"
+                    onClick={() => {
+                      handleSelect();
+                    }}
+                  >
+                    Buscar
+                  </Button>
+                )}
+              </>
             </S.SearchDistrict>
           </S.Content>
         </S.Container>

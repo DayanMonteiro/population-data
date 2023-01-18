@@ -32,7 +32,7 @@ const Maps = () => {
     <MapContainer
       center={center}
       zoom={14}
-      style={{ width: "70vw", height: "84vh" }}
+      style={{ width: "70vw", height: "85vh" }}
       whenCreated={() => {}}
     >
       <TileLayer
