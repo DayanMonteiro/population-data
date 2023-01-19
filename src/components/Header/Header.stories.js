@@ -63,7 +63,6 @@ export const MinimalTemplate = () => {
 
           <Combobox
             items={["Item 1", "Item 2", "Item 3", "Item 4"]}
-            onChange={(selected) => console.log(selected)}
             placeholder="text"
             autocompleteProps={{
               title: "Items",

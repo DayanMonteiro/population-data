@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import * as S from "./styled";
 import ApexCharts from "react-apexcharts";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Charts = () => {
   const [population, setPopulation] = useState([]);
   const [chartData, setChartData] = useState([0]);
-
-  const dispatch = useDispatch();
 
   const getPopulationInfo = async () => {
     const response = await axios.get(
@@ -61,8 +59,14 @@ const Charts = () => {
       {resultSearch?.name === undefined ? (
         <S.Container>
           <S.ContentHeader>
-            <S.Text>Aguardando seleção do bairro</S.Text>
-            <S.Text> para exibir resultado da pesquisa</S.Text>
+            <S.Text>
+              Aguardando seleção do bairro para exibir resultado da pesquisa.
+            </S.Text>
+
+            <S.Text>
+              É possível selecionar no menu ou clicar sobre a área do bairro no
+              mapa.
+            </S.Text>
           </S.ContentHeader>
         </S.Container>
       ) : (

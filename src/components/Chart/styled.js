@@ -32,6 +32,7 @@ export const Title = styled("h1", {
 export const Text = styled("p", {
   fontSize: "$md",
   color: "$gray400",
+  marginTop: "1rem",
 });
 
 export const ContentCharts = styled("div", {

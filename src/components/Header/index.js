@@ -11,10 +11,6 @@ const Header = ({ response, set }) => {
   const [inputValue, setInputValue] = useState();
   const dispatch = useDispatch();
 
-  const handleNeighborhoodsInfo = async () => {
-    dispatch(getNeighborhoodInfo());
-  };
-
   const neighborhoodsNames = useSelector((state) =>
     state?.neighborhoodReducer?.neighborhood?.data?.[0]?.features?.map(
       (data) => {
@@ -38,8 +34,8 @@ const Header = ({ response, set }) => {
   }));
 
   useEffect(() => {
-    handleNeighborhoodsInfo();
-  }, [handleNeighborhoodsInfo]);
+    dispatch(getNeighborhoodInfo());
+  }, [dispatch]);
 
   const handleSelect = async () => {
     const getPropertiesData = getProperties.find(
