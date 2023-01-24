@@ -1,7 +1,6 @@
 import { Header } from ".";
 import LogoImage from "../../assets/img/logo.png";
 import { Combobox } from "evergreen-ui";
-import Button from "../Button";
 
 export default {
   title: "Components/Header",
@@ -69,9 +68,21 @@ export const MinimalTemplate = () => {
             }}
           />
 
-          <Button type="submit" variant="simple">
+          <button
+            type="submit"
+            style={{
+              backgroundColor: "#1F1F1F",
+              color: "#FFFFFF",
+              width: "10rem",
+              height: "2rem",
+              border: "1px solid #666666",
+              fontSize: "0.8rem",
+              textTransform: "uppercase",
+              opacity: "0.8",
+            }}
+          >
             Buscar
-          </Button>
+          </button>
         </div>
       </div>
     </div>
