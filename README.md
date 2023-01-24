@@ -8,6 +8,9 @@ A aplicação possui duas API’s fakes hospedadas no mockapi.io sendo elas as f
 
 O front end foi desenvolvido com ReactJs e para estilos foi usada a biblioteca Stitches, para o mapa a aplicação conta com a lib Leaflet, o gráfico fica por conta da Apexcharts e a documentação com Storybook.
 
+Link de acesso a aplicação https://population-data-wine.vercel.app/
+
+
 Instalação
 
 Para instalar a aplicação clone o projeto, pode usar o terminal com o comando
